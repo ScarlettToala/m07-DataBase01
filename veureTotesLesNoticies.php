@@ -3,12 +3,13 @@
 
     $resultado=$db->query("SELECT * FROM noticies");
 
-    echo "Secciones:"."<br/><br/>";
+    echo "<h1> Noticias </h1>";
     while($fila=$resultado->fetchArray(SQLITE3_ASSOC)){
-        echo "".$fila['not_titular']."<br/>";
-        echo "".$fila['not_cos']."<br/>";
-        echo "".$fila['not_data']."<br/>";
-        echo "".$fila['not_seccio']."<br/>";
+        echo "<em>Titulo: </em>".$fila['not_titular']."<br/>";
+        echo "<em>Noticia: </em>".$fila['not_cos']."<br/>";
+        echo "<em> Fecha: </em>".$fila['not_data']."<br/>";
+        echo "<em> Sección: </em>".$fila['not_seccio']."<br/>";
+        echo "-------------------------<br/>";
     }
 $db->close();
 ?>
