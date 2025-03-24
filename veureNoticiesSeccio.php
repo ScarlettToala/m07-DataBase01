@@ -1,7 +1,6 @@
 <?php
 $seccion;
 if(!empty($_POST['seccion'])){
-
     $arraySeccion=explode(",",$_POST['seccion']);//método contrario al implode
 }else{
     $arraySeccion =array();
@@ -20,19 +19,6 @@ $seccion=implode(",",$_POST['seccion']);
         echo "<br/><br/>";
         echo "<br/><br/>";
     }
+
 $db->close();
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method="POST">
-    <input type="text" name="seccion" id="seccion" placeholder="introduce la sección" value="">
-    </form>
-</body>
-</html>
