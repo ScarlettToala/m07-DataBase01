@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Buscar noticia por el titular</h2>
-    <form actio="veureNoticiesSeccio.php" method="GET">
+    <h2>Buscar noticia parcailemnte por el titular</h2>
+    <form actio="veureNoticiesParcialmentTitular.php" method="GET">
 
     <label for="titular"> Titutlar</label>
     <input type="text" name="titular" id="titular" value="">
@@ -24,7 +24,7 @@
             $titular=$_GET['titular'];
         }
 
-    $consultaSegura=$db->prepare('SELECT * FROM noticies WHERE not_titular =:titular');
+    $consultaSegura=$db->prepare('SELECT * FROM noticies WHERE LIKE not_titular =:%titular%');
     $consultaSegura->bindValue(':titular', $titular, SQLITE3_TEXT);
 
     $resultado=$consultaSegura->execute();
@@ -43,3 +43,4 @@
     }
     
 ?>
+
